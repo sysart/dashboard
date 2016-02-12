@@ -1,0 +1,21 @@
+.food-scheduler {
+  font-family: 'Roboto', sans-serif;
+
+  .food-items {
+    background: rgba(0,0,0,.2);
+    padding: 10px;
+    margin-bottom: 10px;
+
+    .meal{
+      padding-bottom: 10px;
+    }
+
+    .food-name{
+      font-weight: bold;
+    }
+
+    .food-price{
+      font-weight: bold;
+    }
+  }
+}
