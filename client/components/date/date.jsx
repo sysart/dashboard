@@ -1,5 +1,3 @@
-require('./date.scss');
-
 import React from 'react';
 
 class DateComponent extends React.Component {

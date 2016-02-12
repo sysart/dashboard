@@ -1,9 +1,7 @@
-require('./timedisplay.scss');
-
 import React from 'react';
 
-import Clock from '../clock/clock';
-import Date from '../date/date';
+import Clock from '../clock/clock.jsx';
+import Date from '../date/date.jsx';
 
 class TimedisplayComponent extends React.Component {
     constructor(props) {

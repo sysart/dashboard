@@ -1,9 +1,6 @@
-require('./main.scss');
-require('../../styles/main.scss')
-
 import React from 'react';
 
-import Timedisplay from '../timedisplay/timedisplay';
+import Timedisplay from '../timedisplay/timedisplay.jsx';
 
 class AppComponent extends React.Component {
   render() {

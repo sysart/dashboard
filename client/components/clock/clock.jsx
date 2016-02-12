@@ -1,5 +1,3 @@
-require('./clock.scss');
-
 import React from 'react';
 
 class ClockComponent extends React.Component {
