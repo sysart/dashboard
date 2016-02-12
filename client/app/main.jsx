@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 
-import Panels from '../panels/panels.jsx';
-import Timedisplay from '../timedisplay/timedisplay.jsx';
-import Header from '../header/header.jsx';
+import Panels from './components/panels/panels.jsx';
+import Timedisplay from './components/timedisplay/timedisplay.jsx';
+import Header from './components/header/header.jsx';
 
 class AppComponent extends React.Component {
 
