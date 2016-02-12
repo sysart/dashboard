@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
 import Timedisplay from '../timedisplay/timedisplay.jsx'
+import FoodScheduler from '../food-scheduler/food-scheduler.jsx'
 
 class Panels extends React.Component {
 
@@ -9,9 +10,9 @@ class Panels extends React.Component {
 
       this.panels = [
           {
-              component: Timedisplay,
-              statTime: 10,
-              endTime: 18,
+              component: FoodScheduler,
+              startTime: 8,
+              endTime: 13,
               priority: 1,
               size: 1
           }
