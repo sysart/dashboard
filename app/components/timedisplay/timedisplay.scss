@@ -1,0 +1,20 @@
+.timedisplay {
+    width: 200px;
+
+    .date, .clock {
+        text-align: center;
+    }
+
+    .date {
+        h1 {
+            font-weight: 100;
+            margin-bottom: 0;
+        }
+    }
+
+    .clock {
+        h1 {
+            margin-top: 0;
+        }
+    }
+}
