@@ -1,12 +1,12 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 
-import AppComponent from './app/main.jsx';
-import Admin from './admin/admin.jsx';
+import App from './app/App.jsx';
+import Admin from './admin/Admin.jsx';
 
 FlowRouter.route('/', {
     action() {
-        mount(AppComponent, {}, {
+        mount(App, {}, {
             rootProps: {
                 className: 'app'
             }

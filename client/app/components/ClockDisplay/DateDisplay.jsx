@@ -1,6 +1,6 @@
 import React from 'react';
 
-class DateComponent extends React.Component {
+class DateDisplay extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -19,4 +19,4 @@ class DateComponent extends React.Component {
     }
 }
 
-export default DateComponent;
+export default DateDisplay;

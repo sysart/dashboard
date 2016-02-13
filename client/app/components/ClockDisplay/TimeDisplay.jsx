@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ClockComponent extends React.Component {
+class TimeDisplay extends React.Component {
     constructor(props) {
         super(props);
 
@@ -42,4 +42,4 @@ class ClockComponent extends React.Component {
     }
 }
 
-export default ClockComponent;
+export default TimeDisplay;

@@ -3,7 +3,7 @@ import reactMixin from 'react-mixin';
 
 import AppBar from 'material-ui/lib/app-bar';
 
-import StatsEditor from './components/stats-editor/stats-editor.jsx';
+import StatsEditor from './components/StatsEditor/StatsEditor.jsx';
 
 import Datas from '/lib/Datas';
 

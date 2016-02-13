@@ -1,10 +1,10 @@
 import React from 'react';
-import FoodMenuItem from './food-menu-item.jsx'
+import FoodMenuItem from './FoodMenuItem.jsx'
 import reactMixin from 'react-mixin';
 
 import Datas from '/lib/Datas';
 
-class FoodScheduler extends React.Component {
+class FoodPanel extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -26,6 +26,6 @@ class FoodScheduler extends React.Component {
     }
 }
 
-reactMixin.onClass(FoodScheduler, ReactMeteorData);
+reactMixin.onClass(FoodPanel, ReactMeteorData);
 
-export default FoodScheduler;
+export default FoodPanel;

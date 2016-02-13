@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import RaisedButton from 'material-ui/lib/raised-button';
 
-import InputSlider from '../input-slider/input-slider.jsx';
+import InputSlider from '../InputSlider/InputSlider.jsx';
 
 class StatsEditor extends React.Component {
     constructor(props, context) {
