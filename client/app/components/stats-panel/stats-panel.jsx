@@ -3,7 +3,7 @@ import reactMixin from 'react-mixin';
 
 import Datas from '/lib/Datas';
 
-class Stats extends React.Component {
+class StatsPanel extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -27,6 +27,6 @@ class Stats extends React.Component {
     }
 }
 
-reactMixin.onClass(Stats, ReactMeteorData);
+reactMixin.onClass(StatsPanel, ReactMeteorData);
 
-export default Stats;
+export default StatsPanel;

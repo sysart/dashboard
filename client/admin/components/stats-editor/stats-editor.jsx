@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/lib/raised-button';
 
 import InputSlider from '../input-slider/input-slider.jsx';
 
-class Stats extends React.Component {
+class StatsEditor extends React.Component {
     constructor(props, context) {
         super(props, context);
 
@@ -66,4 +66,4 @@ class Stats extends React.Component {
     }
 }
 
-export default Stats;
+export default StatsEditor;

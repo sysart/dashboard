@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import Timedisplay from '../timedisplay/timedisplay.jsx'
 import FoodScheduler from '../food-scheduler/food-scheduler.jsx'
-import Stats from '../stats/stats.jsx'
+import StatsPanel from '../stats-panel/stats-panel.jsx'
 
 class Panels extends React.Component {
 
@@ -18,7 +18,7 @@ class Panels extends React.Component {
                 size: 1
             },
             {
-                component: Stats
+                component: StatsPanel
             }
         ];
 

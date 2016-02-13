@@ -3,7 +3,7 @@ import reactMixin from 'react-mixin';
 
 import AppBar from 'material-ui/lib/app-bar';
 
-import Stats from './components/stats/stats.jsx';
+import StatsEditor from './components/stats-editor/stats-editor.jsx';
 
 import Datas from '/lib/Datas';
 
@@ -29,7 +29,7 @@ class Admin extends React.Component {
             <div className="container-fluid">
                 <div className="row center-sm">
                     <div className="col-xs col-sm-6 start-sm">
-                        <Stats stats={this.data.stats}/>
+                        <StatsEditor stats={this.data.stats}/>
                     </div>
                 </div>
             </div>
