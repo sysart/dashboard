@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 
-import Slider from 'material-ui/lib/slider';
-import TextField from 'material-ui/lib/text-field';
 import RaisedButton from 'material-ui/lib/raised-button';
+
+import InputSlider from '../input-slider/input-slider.jsx';
 
 class Stats extends React.Component {
     constructor(props, context) {
@@ -29,31 +29,20 @@ class Stats extends React.Component {
             }
         ];
 
-        this.state = {};
+        this.state = props.stats || {};
     }
 
     componentWillReceiveProps(props) {
         this.setState(props.stats);
     }
 
-    syncField(input, event) {
-        let value = parseFloat(this.refs[input.key].getValue()) || 0;
-        if (value < input.min) value = input.min;
-        if (value > input.max) value = input.max;
-
-        this.setState({
-            [input.key]: value
-        });
-    }
-
-    syncSlider(input, event, value) {
-        this.setState({
-            [input.key]: value
-        });
-    }
-
     updateStats() {
-        Meteor.call('updateStats', _.omit(this.state, '_id'));
+        let stats = this.inputs.reduce((values, input) => {
+            values[input.key] = this.refs[input.key].getValue();
+            return values;
+        }, {});
+
+        Meteor.call('updateStats', stats);
     }
 
     render() {
@@ -61,19 +50,12 @@ class Stats extends React.Component {
             const value = this.state[input.key];
 
             return (<div key={input.key}>
-                <TextField
-                    floatingLabelText={input.label}
-                    type="number"
+                <InputSlider
+                    label={input.label}
                     ref={input.key}
                     min={input.min}
                     max={input.max}
-                    value={value}
-                    onChange={this.syncField.bind(this, input)}/>
-                <Slider
-                    min={input.min}
-                    max={input.max}
-                    value={value}
-                    onChange={this.syncSlider.bind(this, input)}/>
+                    value={value}/>
             </div>)
         });
 

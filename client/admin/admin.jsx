@@ -5,14 +5,16 @@ import AppBar from 'material-ui/lib/app-bar';
 
 import Stats from './components/stats/stats.jsx';
 
+import Datas from '/lib/Datas';
+
 class Admin extends React.Component {
     constructor(props, context) {
         super(props, context);
+
+        this.state = {};
     }
 
     getMeteorData() {
-        let handle = Meteor.subscribe('datas');
-
         return {
             stats: Datas.findOne('stats') || {}
         };
@@ -22,11 +24,14 @@ class Admin extends React.Component {
         return (<div>
             <AppBar
                 title="Admin"
-                iconClassNameRight="muidocs-icon-navigation-expand-more"
-                />
-            <div className="container">
-                <h1>Admin</h1>
-                <Stats stats={this.data.stats}/>
+                showMenuIconButton={false}
+            />
+            <div className="container-fluid">
+                <div className="row center-sm">
+                    <div className="col-xs col-sm-6 start-sm">
+                        <Stats stats={this.data.stats}/>
+                    </div>
+                </div>
             </div>
         </div>);
     }

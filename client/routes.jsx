@@ -11,6 +11,9 @@ FlowRouter.route('/', {
                 className: 'app'
             }
         });
+    },
+    subscriptions(params, queryParams) {
+        this.register('datas', Meteor.subscribe('datas'));
     }
 });
 
@@ -21,5 +24,8 @@ FlowRouter.route('/admin', {
                 className: 'admin'
             }
         });
+    },
+    subscriptions(params, queryParams) {
+        this.register('datas', Meteor.subscribe('datas'));
     }
 });
