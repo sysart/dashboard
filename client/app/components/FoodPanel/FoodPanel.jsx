@@ -1,6 +1,7 @@
 import React from 'react';
-import FoodMenuItem from './FoodMenuItem.jsx'
 import reactMixin from 'react-mixin';
+
+import FoodMenuItem from './FoodMenuItem.jsx'
 
 import Datas from '/lib/Datas';
 
@@ -22,10 +23,9 @@ class FoodPanel extends React.Component {
             return (<FoodMenuItem key={i} set={set} /> )
         });
 
-        return (<div className="food-scheduler">{items}</div>)
+        return (<div>{items}</div>)
     }
 }
-
 reactMixin.onClass(FoodPanel, ReactMeteorData);
 
 export default FoodPanel;

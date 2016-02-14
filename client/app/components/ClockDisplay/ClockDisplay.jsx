@@ -1,9 +1,8 @@
 import React from 'react';
+import Radium from 'radium';
 
 import TimeDisplay from './TimeDisplay.jsx';
 import DateDisplay from './DateDisplay.jsx';
-
-import styles from './kello.css';
 
 class ClockDisplay extends React.Component {
     constructor(props) {
@@ -12,12 +11,17 @@ class ClockDisplay extends React.Component {
 
     render() {
         return (
-            <div className="timedisplay">
-                <DateDisplay></DateDisplay>
-                <TimeDisplay></TimeDisplay>
+            <div style={styles}>
+                <DateDisplay style={styles.date}></DateDisplay>
+                <TimeDisplay style={styles.time}></TimeDisplay>
             </div>
         );
     }
 }
 
-export default ClockDisplay;
+const styles = {
+    fontSize: '32px',
+    marginBottom: '10px'
+};
+
+export default Radium(ClockDisplay);

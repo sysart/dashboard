@@ -1,22 +1,42 @@
 import React from 'react';
+import Radium from 'radium';
+import moment from 'moment';
 
 class DateDisplay extends React.Component {
     constructor(props) {
         super(props);
+        this.tick = this.tick.bind(this);
+    }
+
+    componentDidMount() {
+        this.tick();
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.timeout);
+    }
+
+    tick() {
+        this.setState({
+            date: moment().format('D.M.YYYY')
+        });
+
+        let timeout = moment().endOf('day') - moment();
+        if (timeout > 60000) timeout = 60000;
+        this.timeout = setTimeout(this.tick, timeout);
     }
 
     render() {
-        let today = new Date();
-
-        let date = `${today.getDate()}.${today.getMonth() + 1}.${today.getFullYear()}`
         return (
-            <div className="date">
-                <h1>
-                    {date}
-                </h1>
+            <div style={styles}>
+                {this.state.date}
             </div>
         );
     }
 }
 
-export default DateDisplay;
+const styles = {
+    fontWeight: '100'
+}
+
+export default Radium(DateDisplay);

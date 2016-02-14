@@ -6,11 +6,7 @@ import Admin from './admin/Admin.jsx';
 
 FlowRouter.route('/', {
     action() {
-        mount(App, {}, {
-            rootProps: {
-                className: 'app'
-            }
-        });
+        mount(App);
     },
     subscriptions(params, queryParams) {
         this.register('datas', Meteor.subscribe('datas'));
@@ -19,11 +15,7 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/admin', {
     action() {
-        mount(Admin, {}, {
-            rootProps: {
-                className: 'admin'
-            }
-        });
+        mount(Admin);
     },
     subscriptions(params, queryParams) {
         this.register('datas', Meteor.subscribe('datas'));

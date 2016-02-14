@@ -1,45 +1,40 @@
 import React from 'react';
+import Radium from 'radium';
+import moment from 'moment';
 
 class TimeDisplay extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            hour: 0,
-            minute: 0,
-            second: 0
-        }
-
-        this.tick = this.tick.bind(this);
-    }
-
-    tick() {
-        let today = new Date();
-        let hour = ('0' + today.getHours()).slice(-2) //010 => 10
-        let minute = ('0' + today.getMinutes()).slice(-2);
-        let second = ('0' + today.getSeconds()).slice(-2);
-
-        this.setState({
-            hour: hour,
-            minute: minute,
-            second: second
-        });
     }
 
     componentDidMount() {
-        window.setInterval(this.tick, 500);
+        this.interval = setInterval(() => {
+            this.tick();
+        }, 1000);
+        this.tick();
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
+    tick() {
+        this.setState({
+            time: moment().format('HH:mm:ss')
+        });
     }
 
     render() {
-        let time = `${this.state.hour}:${this.state.minute}:${this.state.second}`
         return (
-            <div className="clock">
-                <h1>
-                    {time}
-                </h1>
+            <div style={styles}>
+                {this.state.time}
             </div>
         );
     }
 }
 
-export default TimeDisplay;
+const styles = {
+    fontWeight: 'bold'
+};
+
+export default Radium(TimeDisplay);

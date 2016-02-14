@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import Radium from 'radium';
 
 import FoodPanel from '../FoodPanel/FoodPanel.jsx'
 import StatsPanel from '../StatsPanel/StatsPanel.jsx'
@@ -18,6 +19,9 @@ class Panels extends React.Component {
             },
             {
                 component: StatsPanel
+            },
+            {
+                component: FoodPanel
             }
         ];
 
@@ -26,11 +30,10 @@ class Panels extends React.Component {
     render() {
         const panels = this.panels.map((panel, index) => {
             const Component = panel.component
-            let className = `panel panel-size-${panel.size} col-sm-4`;
 
             return (
                 <div
-                    className={className}
+                    style={styles.panel}
                     key={index}
                 >
                     <Component />
@@ -39,14 +42,22 @@ class Panels extends React.Component {
         })
 
         return (
-            <div className="container-fluid">
-                <div className="panels row">
-                    {panels}
-                </div>
+            <div style={styles.container}>
+                {panels}
             </div>
         );
     }
 }
 
+const styles = {
+    container: {
+        display: 'flex',
+        marginLeft: '-20px'
+    },
+    panel: {
+        flex: '1',
+        marginLeft: '20px'
+    }
+};
 
-export default Panels;
+export default Radium(Panels);

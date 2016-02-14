@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import reactMixin from 'react-mixin';
+import Radium from 'radium'
 
 import AppBar from 'material-ui/lib/app-bar';
 
@@ -21,22 +22,26 @@ class Admin extends React.Component {
     }
 
     render() {
-        return (<div>
-            <AppBar
-                title="Admin"
-                showMenuIconButton={false}
-            />
-            <div className="container-fluid">
-                <div className="row center-sm">
-                    <div className="col-xs col-sm-6 start-sm">
-                        <StatsEditor stats={this.data.stats}/>
-                    </div>
+        return (
+            <div>
+                <AppBar
+                    title="Admin"
+                    showMenuIconButton={false}
+                />
+                <div style={styles.container}>
+                    <StatsEditor stats={this.data.stats}/>
                 </div>
             </div>
-        </div>);
+        );
     }
 }
-
 reactMixin.onClass(Admin, ReactMeteorData);
 
-export default Admin;
+const styles = {
+    container: {
+        maxWidth: '960px',
+        margin: '0 auto'
+    }
+};
+
+export default Radium(Admin);
