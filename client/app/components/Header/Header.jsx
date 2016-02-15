@@ -11,10 +11,10 @@ class Header extends React.Component {
   render() {
     return (
         <div style={styles.container}>
-            <img style={styles.logo} src="/images/sysboard.svg" />
             <div style={styles.clock}>
                 <ClockDisplay />
             </div>
+            <img style={styles.logo} src="/images/sysboard.svg" />
         </div>
     );
   }
@@ -22,13 +22,19 @@ class Header extends React.Component {
 
 const styles = {
     container: {
-        textAlign: 'center'
+        position: 'relative',
+        height: '76px',
+        margin: '10px'
     },
     clock: {
-        float: 'left'
+        position: 'absolute',
+        top: 0,
+        left: 0
     },
     logo: {
-        maxWidth: '200px'
+        display: 'block',
+        height: '100%',
+        margin: '0 auto'
     }
 };
 

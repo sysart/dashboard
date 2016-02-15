@@ -14,8 +14,13 @@ class FoodMenuItem extends React.Component {
 
         return (
             <div style={styles.container}>
+                {this.props.set.name && (
+                    <div style={styles.name}>{this.props.set.name}</div>
+                )}
                 {components}
-                <div style={styles.price}>Hinta: {this.props.set.price}</div>
+                {this.props.set.price && (
+                    <div style={styles.price}>Hinta: {this.props.set.price}</div>
+                )}
             </div>
         )
     }
@@ -27,6 +32,9 @@ const styles = {
     },
     item: {
         marginBottom: '5px'
+    },
+    name: {
+        fontWeight: 'bold'
     },
     price: {
         fontWeight: 'bold'

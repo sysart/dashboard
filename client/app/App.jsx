@@ -3,6 +3,7 @@ import Radium from 'radium';
 
 import Panels from './components/Panels/Panels.jsx';
 import Header from './components/Header/Header.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 class App extends React.Component {
 
@@ -16,6 +17,7 @@ class App extends React.Component {
         <div style={styles.container}>
             <Header />
             <Panels />
+            <Footer />
         </div>
 
     );
@@ -27,10 +29,12 @@ const styles = {
         position: 'absolute',
         width: '100%',
         height: '100%',
-        padding: '20px',
         backgroundImage: 'url("https://unsplash.it/1920/1080/?image=993")',
         backgroundSize: 'cover',
-        fontFamily: '"Roboto", sans-serif'
+        fontFamily: '"Roboto", sans-serif',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
     }
 };
 

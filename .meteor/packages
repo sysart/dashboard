@@ -22,3 +22,4 @@ http
 kadira:flow-router
 fourseven:scss
 react-meteor-data
+percolate:synced-cron

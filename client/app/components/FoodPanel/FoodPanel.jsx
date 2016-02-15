@@ -24,11 +24,17 @@ class FoodPanel extends React.Component {
             return (<FoodMenuItem key={i} set={set} /> )
         });
 
+        const thaiSets = this.data.menus.thai.map((set, i) => {
+            return (<FoodMenuItem key={i} set={set} /> )
+        });
+
         return (
             <div>
                 <section>
                     <h1 style={styles.title}>Amica</h1>
                     {amicaSets}
+                    <h1 style={styles.title}>Thai</h1>
+                    {thaiSets}
                 </section>
 
             </div>

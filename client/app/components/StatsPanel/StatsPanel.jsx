@@ -3,6 +3,8 @@ import reactMixin from 'react-mixin';
 
 import Datas from '/lib/Datas';
 
+import Bar from './Bar.jsx';
+
 class StatsPanel extends React.Component {
     constructor(props) {
         super(props);
@@ -19,9 +21,9 @@ class StatsPanel extends React.Component {
 
         return (
             <div>
-                <div>{this.data.stats.happiness}</div>
-                <div>{this.data.stats.billing}</div>
-                <div>{this.data.stats.learning}</div>
+                <Bar value={this.data.stats.happiness.value} min={this.data.stats.happiness.min} max={this.data.stats.happiness.max}/>
+                <Bar value={this.data.stats.billing.value} min={this.data.stats.billing.min} max={this.data.stats.billing.max}/>
+                <Bar value={this.data.stats.learning.value} min={this.data.stats.learning.min} max={this.data.stats.learning.max}/>
             </div>
         )
     }

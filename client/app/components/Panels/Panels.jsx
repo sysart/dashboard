@@ -57,7 +57,8 @@ const styles = {
     },
     panel: {
         flex: '1',
-        marginLeft: '20px'
+        marginLeft: '20px',
+        padding: '10px'
     }
 };
 

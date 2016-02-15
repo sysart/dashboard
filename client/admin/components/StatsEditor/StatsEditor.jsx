@@ -38,7 +38,11 @@ class StatsEditor extends React.Component {
 
     updateStats() {
         let stats = this.inputs.reduce((values, input) => {
-            values[input.key] = this.refs[input.key].getValue();
+            values[input.key] = {
+                value: this.refs[input.key].getValue(),
+                min: input.min,
+                max: input.max
+            };
             return values;
         }, {});
 
@@ -47,7 +51,7 @@ class StatsEditor extends React.Component {
 
     render() {
         const inputs = this.inputs.map((input) => {
-            const value = this.state[input.key];
+            const value = this.state[input.key] && this.state[input.key].value;
 
             return (<div key={input.key}>
                 <InputSlider
