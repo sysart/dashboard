@@ -28,7 +28,7 @@ const styles = {
         width: '100%',
         height: '100%',
         padding: '20px',
-        backgroundImage: 'url("https://unsplash.it/1920/1080/?random")',
+        backgroundImage: 'url("https://unsplash.it/1920/1080/?image=993")',
         backgroundSize: 'cover',
         fontFamily: '"Roboto", sans-serif'
     }

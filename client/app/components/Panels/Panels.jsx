@@ -52,7 +52,8 @@ class Panels extends React.Component {
 const styles = {
     container: {
         display: 'flex',
-        marginLeft: '-20px'
+        marginLeft: '-20px',
+        clear: 'both'
     },
     panel: {
         flex: '1',

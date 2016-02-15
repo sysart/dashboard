@@ -9,10 +9,10 @@ Meteor.methods({
 });
 
 function updateAmica() {
-    const now = moment('2016-02-12');
+    const now = moment();
 
-    data = require('./menu.json');
-    // let {data} = HTTP.get('http://www.amica.fi/modules/json/json/Index?costNumber=3131&language=fi');
+    // data = require('./menu.json');
+    let {data} = HTTP.get('http://www.amica.fi/modules/json/json/Index?costNumber=3131&language=fi');
 
     let menu = data.MenusForDays.find((menu) => {
         return moment(menu.Date).isSame(now, 'day');

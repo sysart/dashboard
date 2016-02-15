@@ -23,12 +23,10 @@ class FoodMenuItem extends React.Component {
 
 const styles = {
     container: {
-        background: 'rgba(255, 255, 255, .5)',
-        marginBottom: '10px',
-        padding: '10px'
+        marginBottom: '20px'
     },
     item: {
-        marginBottom: '10px'
+        marginBottom: '5px'
     },
     price: {
         fontWeight: 'bold'
