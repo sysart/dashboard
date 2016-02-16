@@ -47,12 +47,12 @@ function loadThai() {
         return $(el).text() === thisDay;
     }).closest('.fusion-flip-box').find('.flip-box-back-inner').text();
 
-    let re = /\*(.*)\*([^*]*)/gm;
+    let re = /(\*(.*)\*)?([^*]+)/gm;
     let found, sets = [];
     while (found = re.exec(menu)) {
         sets.push({
-            name: found[1].trim(),
-            components: found[2].trim().split(/\n+/).map((component) => {
+            name: found[2] && found[2].trim(),
+            components: found[3].trim().split(/\n+/).map((component) => {
                 return component.substr(1).trim();
             })
         });
@@ -76,3 +76,5 @@ SyncedCron.add({
         update();
     }
 });
+
+update();
