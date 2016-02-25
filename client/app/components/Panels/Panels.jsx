@@ -21,7 +21,11 @@ class Panels extends React.Component {
                 component: StatsPanel
             },
             {
-                component: FoodPanel
+                component() {
+                    return (
+                        <div></div>
+                    );
+                }
             }
         ];
 

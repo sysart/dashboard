@@ -12,6 +12,8 @@ class FoodPanel extends React.Component {
     }
 
     getMeteorData() {
+        Meteor.subscribe('datas');
+
         return {
             menus: Datas.findOne('lunchMenus')
         };

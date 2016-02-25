@@ -11,6 +11,8 @@ class StatsPanel extends React.Component {
     }
 
     getMeteorData() {
+        Meteor.subscribe('datas');
+
         return {
             stats: Datas.findOne('stats')
         };

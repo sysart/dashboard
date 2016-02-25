@@ -14,7 +14,7 @@ class App extends React.Component {
 
   render() {
     return (
-        <div style={styles.container}>
+        <div className="app" style={styles.container}>
             <Header />
             <Panels />
             <Footer />

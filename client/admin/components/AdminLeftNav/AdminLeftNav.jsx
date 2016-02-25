@@ -11,8 +11,8 @@ const MENU_ITEMS = [
         text: 'Stats'
     },
     {
-        route: '/admin/menu',
-        text: 'Menu'
+        route: '/admin/message',
+        text: 'Message'
     }
 ];
 
@@ -27,9 +27,7 @@ class AdminLeftNav extends React.Component {
     }
 
     render() {
-        const menuItems = MENU_ITEMS.filter((menuItem) => {
-            return !this.context.router.isActive(menuItem.route);
-        }).map((menuItem) => {
+        const menuItems = MENU_ITEMS.map((menuItem) => {
             return (
                 <MenuItem key={menuItem.route} onTouchTap={this.goTo.bind(this, menuItem.route)}>
                     {menuItem.text}

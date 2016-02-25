@@ -1,8 +1,11 @@
 import React, { PropTypes } from 'react';
+import reactMixin from 'react-mixin';
 
 import RaisedButton from 'material-ui/lib/raised-button';
 
 import InputSlider from '../InputSlider/InputSlider.jsx';
+
+import Datas from '/lib/Datas';
 
 class StatsEditor extends React.Component {
     constructor(props, context) {
@@ -28,12 +31,14 @@ class StatsEditor extends React.Component {
                 max: 20
             }
         ];
-
-        this.state = props.stats || {};
     }
 
-    componentWillReceiveProps(props) {
-        this.setState(props.stats);
+    getMeteorData() {
+        Meteor.subscribe('datas');
+
+        return {
+            stats: Datas.findOne('stats')
+        };
     }
 
     updateStats() {
@@ -51,7 +56,7 @@ class StatsEditor extends React.Component {
 
     render() {
         const inputs = this.inputs.map((input) => {
-            const value = this.state[input.key] && this.state[input.key].value;
+            const value = (this.data.stats && this.data.stats[input.key].value) || input.min;
 
             return (<div key={input.key}>
                 <InputSlider
@@ -69,5 +74,7 @@ class StatsEditor extends React.Component {
         </div>);
     }
 }
+
+reactMixin.onClass(StatsEditor, ReactMeteorData);
 
 export default StatsEditor;
