@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
+import Radium, { StyleRoot } from 'radium';
 
 import Panels from './components/Panels/Panels';
 import Header from './components/Header/Header';
@@ -14,12 +14,13 @@ class App extends React.Component {
 
   render() {
     return (
-        <div className="app" style={styles.container}>
-            <Header />
-            <Panels />
-            <Footer />
-        </div>
-
+        <StyleRoot>
+            <div className="app" style={styles.container}>
+                <Header />
+                <Panels />
+                <Footer />
+            </div>
+        </StyleRoot>
     );
   }
 }

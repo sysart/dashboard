@@ -19,17 +19,31 @@ class Footer extends React.Component {
 
         return (
             <div style={styles.container}>
-                <marquee>{message}</marquee>
+                <div style={styles.marquee}>{message}</div>
             </div>
         );
     }
 }
 reactMixin.onClass(Footer, ReactMeteorData);
 
+const marqueeAnimation = Radium.keyframes({
+    '0%': {
+        transform: 'translateX(100vw)'
+    },
+    '100%': {
+        transform: 'translateX(-100%)'
+    }
+});
+
 const styles = {
     container: {
         background: 'black',
         padding: '10px 0'
+    },
+    marquee: {
+        display: 'inline-block',
+        animation: 'x 20s linear infinite',
+        animationName: marqueeAnimation
     }
 };
 
