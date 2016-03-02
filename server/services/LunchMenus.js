@@ -3,6 +3,8 @@ import cheerio from 'cheerio';
 import Datas from '/lib/collections/Datas';
 
 function update() {
+    console.log('Loading lunch menus...');
+
     let amica = loadAmica();
     let thai = loadThai();
 
@@ -10,6 +12,7 @@ function update() {
         _id: 'lunchMenus'
     }, {
         $set: {
+            date: moment().format('YYYY-MM-DD'),
             amica,
             thai
         }
@@ -62,7 +65,8 @@ function loadThai() {
 }
 
 Meteor.startup(function () {
-    if (!Datas.findOne('lunchMenus')) {
+    let lunchMenus = Datas.findOne('lunchMenus');
+    if (!lunchMenus || !moment(lunchMenus.date).isSame(moment(), 'day')) {
         update();
     }
 });
@@ -70,7 +74,7 @@ Meteor.startup(function () {
 SyncedCron.add({
     name: 'Update lunch menus',
     schedule(parser) {
-        return parser.text('at 8:00am every weekday');
+        return parser.text('at 9:00am every weekday');
     },
     job() {
         update();
