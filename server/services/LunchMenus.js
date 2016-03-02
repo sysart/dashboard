@@ -2,6 +2,25 @@ import moment from 'moment';
 import cheerio from 'cheerio';
 import Datas from '/lib/collections/Datas';
 
+Meteor.startup(function () {
+    let lunchMenus = Datas.findOne('lunchMenus');
+    if (!lunchMenus || !moment(lunchMenus.date).isSame(moment(), 'day')) {
+        update();
+    }
+});
+
+SyncedCron.add({
+    name: 'Update lunch menus',
+    schedule(parser) {
+        return parser.text('at 9:00am every weekday');
+    },
+    job() {
+        update();
+    }
+});
+
+
+
 function update() {
     console.log('Loading lunch menus...');
 
@@ -63,22 +82,3 @@ function loadThai() {
 
     return sets;
 }
-
-Meteor.startup(function () {
-    let lunchMenus = Datas.findOne('lunchMenus');
-    if (!lunchMenus || !moment(lunchMenus.date).isSame(moment(), 'day')) {
-        update();
-    }
-});
-
-SyncedCron.add({
-    name: 'Update lunch menus',
-    schedule(parser) {
-        return parser.text('at 9:00am every weekday');
-    },
-    job() {
-        update();
-    }
-});
-
-update();
