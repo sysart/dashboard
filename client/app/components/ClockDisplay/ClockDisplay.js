@@ -20,7 +20,8 @@ class ClockDisplay extends React.Component {
 }
 
 const styles = {
-    fontSize: '32px'
+    fontSize: '32px',
+    textShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)'
 };
 
 export default Radium(ClockDisplay);
