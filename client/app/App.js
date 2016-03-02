@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import Radium from 'radium';
 
-import Panels from './components/Panels/Panels.jsx';
-import Header from './components/Header/Header.jsx';
-import Footer from './components/Footer/Footer.jsx';
+import Panels from './components/Panels/Panels';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 class App extends React.Component {
 

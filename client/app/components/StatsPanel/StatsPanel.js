@@ -3,7 +3,7 @@ import reactMixin from 'react-mixin';
 
 import Datas from '/lib/Datas';
 
-import Bar from './Bar.jsx';
+import Bar from './Bar';
 
 class StatsPanel extends React.Component {
     constructor(props) {

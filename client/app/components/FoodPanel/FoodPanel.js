@@ -2,7 +2,7 @@ import React from 'react';
 import reactMixin from 'react-mixin';
 import Radium from 'radium';
 
-import FoodMenuItem from './FoodMenuItem.jsx'
+import FoodMenuItem from './FoodMenuItem'
 
 import Datas from '/lib/Datas';
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import {Route} from 'react-router';
 
-import Admin from './Admin.jsx';
-import StatsEditor from './components/StatsEditor/StatsEditor.jsx';
-import MessageEditor from './components/MessageEditor/MessageEditor.jsx';
+import Admin from './Admin';
+import StatsEditor from './components/StatsEditor/StatsEditor';
+import MessageEditor from './components/MessageEditor/MessageEditor';
 
 
 export default (

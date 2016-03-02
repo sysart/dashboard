@@ -5,8 +5,8 @@ import Radium from 'radium'
 
 import AppBar from 'material-ui/lib/app-bar';
 
-import AdminLeftNav from './components/AdminLeftNav/AdminLeftNav.jsx';
-import StatsEditor from './components/StatsEditor/StatsEditor.jsx';
+import AdminLeftNav from './components/AdminLeftNav/AdminLeftNav';
+import StatsEditor from './components/StatsEditor/StatsEditor';
 
 import Datas from '/lib/Datas';
 

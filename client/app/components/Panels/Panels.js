@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import Radium from 'radium';
 
-import FoodPanel from '../FoodPanel/FoodPanel.jsx'
-import StatsPanel from '../StatsPanel/StatsPanel.jsx'
+import FoodPanel from '../FoodPanel/FoodPanel'
+import StatsPanel from '../StatsPanel/StatsPanel'
 
 class Panels extends React.Component {
 

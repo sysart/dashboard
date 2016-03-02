@@ -1,8 +1,8 @@
 import React from 'react';
 import Radium from 'radium';
 
-import TimeDisplay from './TimeDisplay.jsx';
-import DateDisplay from './DateDisplay.jsx';
+import TimeDisplay from './TimeDisplay';
+import DateDisplay from './DateDisplay';
 
 class ClockDisplay extends React.Component {
     constructor(props) {

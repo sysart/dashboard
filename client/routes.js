@@ -2,8 +2,8 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Router, Route, NotFoundRoute, browserHistory} from 'react-router';
 
-import App from './app/App.jsx';
-import AdminRoutes from './admin/AdminRoutes.jsx';
+import App from './app/App';
+import AdminRoutes from './admin/AdminRoutes';
 
 Meteor.startup(function () {
     render((

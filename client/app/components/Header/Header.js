@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Radium from 'radium';
 
-import ClockDisplay from '../ClockDisplay/ClockDisplay.jsx'
+import ClockDisplay from '../ClockDisplay/ClockDisplay'
 
 class Header extends React.Component {
   constructor(props, context){

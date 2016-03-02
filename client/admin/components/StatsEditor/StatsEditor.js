@@ -3,7 +3,7 @@ import reactMixin from 'react-mixin';
 
 import RaisedButton from 'material-ui/lib/raised-button';
 
-import InputSlider from '../InputSlider/InputSlider.jsx';
+import InputSlider from '../InputSlider/InputSlider';
 
 import Datas from '/lib/Datas';
 
