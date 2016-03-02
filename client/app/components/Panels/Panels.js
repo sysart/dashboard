@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import Radium from 'radium';
 
-import FoodPanel from '../FoodPanel/FoodPanel'
-import StatsPanel from '../StatsPanel/StatsPanel'
+import FoodPanel from './FoodPanel/FoodPanel';
+import StatsPanel from './StatsPanel/StatsPanel';
 
 class Panels extends React.Component {
 
@@ -11,11 +11,7 @@ class Panels extends React.Component {
 
         this.panels = [
             {
-                component: FoodPanel,
-                startTime: 8,
-                endTime: 13,
-                priority: 1,
-                size: 1
+                component: FoodPanel
             },
             {
                 component: StatsPanel
