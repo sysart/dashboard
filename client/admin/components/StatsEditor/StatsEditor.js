@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 import React, { PropTypes } from 'react';
 import reactMixin from 'react-mixin';
 
@@ -5,7 +7,7 @@ import RaisedButton from 'material-ui/lib/raised-button';
 
 import InputSlider from '../InputSlider/InputSlider';
 
-import Datas from '/lib/Datas';
+import Stats from '/lib/collections/Stats';
 
 class StatsEditor extends React.Component {
     constructor(props, context) {
@@ -14,40 +16,32 @@ class StatsEditor extends React.Component {
         this.inputs = [
             {
                 label: 'Happiness',
-                key: 'happiness',
-                min: 1,
-                max: 5
+                key: 'happiness'
             },
             {
                 label: 'Billing',
-                key: 'billing',
-                min: 0,
-                max: 80
+                key: 'billing'
             },
             {
                 label: 'Learning',
-                key: 'learning',
-                min: 0,
-                max: 20
+                key: 'learning'
             }
         ];
     }
 
     getMeteorData() {
-        Meteor.subscribe('datas');
+        Meteor.subscribe('stats');
 
         return {
-            stats: Datas.findOne('stats')
+            stats: Stats.findOne({
+                date: moment().format('YYYY-MM-DD')
+            })
         };
     }
 
     updateStats() {
         let stats = this.inputs.reduce((values, input) => {
-            values[input.key] = {
-                value: this.refs[input.key].getValue(),
-                min: input.min,
-                max: input.max
-            };
+            values[input.key] = this.refs[input.key].getValue();
             return values;
         }, {});
 
@@ -56,22 +50,27 @@ class StatsEditor extends React.Component {
 
     render() {
         const inputs = this.inputs.map((input) => {
-            const value = (this.data.stats && this.data.stats[input.key].value) || input.min;
+            const value = (this.data.stats && this.data.stats[input.key]) || Stats.STATS[input.key].min;
 
-            return (<div key={input.key}>
-                <InputSlider
-                    label={input.label}
-                    ref={input.key}
-                    min={input.min}
-                    max={input.max}
-                    value={value}/>
-            </div>)
+            return (
+                <div key={input.key}>
+                    <InputSlider
+                        label={input.label}
+                        ref={input.key}
+                        min={Stats.STATS[input.key].min}
+                        max={Stats.STATS[input.key].max}
+                        value={value}/>
+                </div>
+            )
         });
 
-        return (<div>
-            {inputs}
-            <RaisedButton label="Update" primary={true} onClick={this.updateStats.bind(this)} />
-        </div>);
+        return (
+            <div>
+                <h1>STATS EDITOR</h1>
+                {inputs}
+                <RaisedButton label="Update" primary={true} onClick={this.updateStats.bind(this)} />
+            </div>
+        );
     }
 }
 

@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import reactMixin from 'react-mixin';
 import Radium from 'radium';
 
-import Datas from '/lib/Datas';
+import Datas from '/lib/collections/Datas';
 
 class Footer extends React.Component {
     getMeteorData() {

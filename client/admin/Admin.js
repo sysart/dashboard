@@ -6,9 +6,6 @@ import Radium from 'radium'
 import AppBar from 'material-ui/lib/app-bar';
 
 import AdminLeftNav from './components/AdminLeftNav/AdminLeftNav';
-import StatsEditor from './components/StatsEditor/StatsEditor';
-
-import Datas from '/lib/Datas';
 
 class Admin extends React.Component {
     constructor(props, context) {
@@ -16,12 +13,6 @@ class Admin extends React.Component {
 
         this.state = {
             leftNavOpen: false
-        };
-    }
-
-    getMeteorData() {
-        return {
-            stats: Datas.findOne('stats') || {}
         };
     }
 
@@ -58,7 +49,6 @@ class Admin extends React.Component {
         );
     }
 }
-reactMixin.onClass(Admin, ReactMeteorData);
 
 const styles = {
     container: {

@@ -4,7 +4,7 @@ import Radium from 'radium';
 
 import FoodMenuItem from './FoodMenuItem'
 
-import Datas from '/lib/Datas';
+import Datas from '/lib/collections/Datas';
 
 class FoodPanel extends React.Component {
     constructor(props) {

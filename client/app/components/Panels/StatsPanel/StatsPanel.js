@@ -1,7 +1,9 @@
+import _ from 'lodash';
+
 import React from 'react';
 import reactMixin from 'react-mixin';
 
-import Datas from '/lib/Datas';
+import Stats from '/lib/collections/Stats';
 
 import Bar from './Bar';
 
@@ -11,21 +13,34 @@ class StatsPanel extends React.Component {
     }
 
     getMeteorData() {
-        Meteor.subscribe('datas');
+        Meteor.subscribe('stats');
 
         return {
-            stats: Datas.findOne('stats')
+            stats: Stats.findOne({}, {
+                order: {
+                    date: -1
+                }
+            })
         };
     }
 
     render() {
         if (!this.data.stats) return (<div></div>);
 
+        const bars = _.map(Stats.STATS, (s, k) => {
+            return (
+                <Bar
+                    key={k}
+                    value={this.data.stats[k]}
+                    min={s.min}
+                    max={s.max}
+                />
+            );
+        });
+
         return (
             <div>
-                <Bar value={this.data.stats.happiness.value} min={this.data.stats.happiness.min} max={this.data.stats.happiness.max}/>
-                <Bar value={this.data.stats.billing.value} min={this.data.stats.billing.min} max={this.data.stats.billing.max}/>
-                <Bar value={this.data.stats.learning.value} min={this.data.stats.learning.min} max={this.data.stats.learning.max}/>
+                {bars}
             </div>
         )
     }

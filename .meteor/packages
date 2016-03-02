@@ -22,3 +22,4 @@ http
 fourseven:scss
 react-meteor-data
 percolate:synced-cron
+aldeed:collection2

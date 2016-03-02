@@ -1,6 +1,6 @@
 import moment from 'moment';
 import cheerio from 'cheerio';
-import Datas from '/lib/Datas';
+import Datas from '/lib/collections/Datas';
 
 function update() {
     let amica = loadAmica();
