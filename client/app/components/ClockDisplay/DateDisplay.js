@@ -6,6 +6,10 @@ class DateDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.tick = this.tick.bind(this);
+
+        this.state = {
+            date: ''
+        };
     }
 
     componentDidMount() {

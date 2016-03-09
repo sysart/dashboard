@@ -5,6 +5,10 @@ import moment from 'moment';
 class TimeDisplay extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            time: ''
+        };
     }
 
     componentDidMount() {
