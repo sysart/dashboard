@@ -9,7 +9,6 @@ class App extends React.Component {
 
   constructor(props, context){
       super(props, context);
-
   }
 
   render() {
