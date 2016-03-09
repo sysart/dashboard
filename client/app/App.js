@@ -35,7 +35,8 @@ const styles = {
         fontFamily: '"Roboto", sans-serif',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        overflow: 'hidden'
     }
 };
 
