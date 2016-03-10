@@ -1,0 +1,17 @@
+:local .container {
+    position: relative;
+    height: 76px;
+    margin: 10px;
+}
+
+:local .clock {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+:local .logo {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+}

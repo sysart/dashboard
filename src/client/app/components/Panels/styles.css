@@ -1,0 +1,11 @@
+:local .container {
+    display: flex;
+    margin-left: -20px;
+    clear: both;
+}
+
+:local .panel {
+    flex: 1;
+    margin-left: 20px;
+    padding: 10px;
+}
