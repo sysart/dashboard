@@ -13,7 +13,7 @@ class FoodMenuItem extends React.Component {
         });
 
         return (
-            <div style={styles.container}>
+            <div className={styles.container}>
                 {this.props.set.name && (
                     <div className={styles.name}>{this.props.set.name}</div>
                 )}
