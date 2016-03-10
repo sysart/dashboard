@@ -5,7 +5,7 @@ import Datas from 'lib/collections/Datas';
 Meteor.startup(function () {
     let lunchMenus = Datas.findOne('lunchMenus');
     if (!lunchMenus || !moment(lunchMenus.date).isSame(moment(), 'day')) {
-        update();
+        // update();
     }
 });
 

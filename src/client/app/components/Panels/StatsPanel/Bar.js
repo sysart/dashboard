@@ -11,7 +11,7 @@ class Bar extends React.Component {
 
         return (
             <div>
-                <div className={[styles.bar, style]}></div>
+                <div className={styles.bar} style={style}></div>
             </div>
         );
     }
