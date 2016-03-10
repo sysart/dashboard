@@ -1,0 +1,23 @@
+:local .container {
+    margin-bottom: 10px;
+}
+
+:local .title {
+    margin: 0;
+}
+
+:local .set {
+    margin-bottom: 20px;
+}
+
+:local .item {
+    margin-bottom: 5px;
+}
+
+:local .name {
+    font-weight: bold;
+}
+
+:local .price {
+    font-weight: bold;
+}

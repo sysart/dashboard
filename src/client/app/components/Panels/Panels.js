@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 
 import FoodPanel from './FoodPanel/FoodPanel';
 import StatsPanel from './StatsPanel/StatsPanel';
+import TrafficPanel from './TrafficPanel/TrafficPanel';
 
 import styles from './styles.css';
 
@@ -18,11 +19,7 @@ class Panels extends React.Component {
                 component: StatsPanel
             },
             {
-                component() {
-                    return (
-                        <div></div>
-                    );
-                }
+                component: TrafficPanel
             }
         ];
 
