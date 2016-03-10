@@ -28,10 +28,14 @@ class StatsPanel extends React.Component {
     render() {
         if (!this.data.stats) return (<div></div>);
 
+        let counter = 0;
+
         const bars = _.map(Stats.STATS, (s, k) => {
+            counter++;
             return (
                 <Bar
                     key={k}
+                    index={counter}
                     value={this.data.stats[k]}
                     min={s.min}
                     max={s.max}
@@ -40,7 +44,11 @@ class StatsPanel extends React.Component {
         });
 
         return (
-            <div>
+            <div style={{position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    top: 0}}>
                 {bars}
             </div>
         )
