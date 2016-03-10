@@ -15,6 +15,7 @@ es5-shim                # ECMAScript 5 compatibility for older browsers.
 
 webpack:webpack
 webpack:react
+webpack:json
 
 static-html
 

@@ -1,11 +1,11 @@
 import moment from 'moment';
-// import cheerio from 'cheerio';
+import cheerio from 'cheerio';
 import Datas from 'lib/collections/Datas';
 
 Meteor.startup(function () {
     let lunchMenus = Datas.findOne('lunchMenus');
     if (!lunchMenus || !moment(lunchMenus.date).isSame(moment(), 'day')) {
-        // update();
+        update();
     }
 });
 
@@ -63,7 +63,7 @@ function loadThai() {
     let thisDay = moment().format('dddd').toUpperCase();
 
     let {content} = HTTP.get('http://tasteofthai.fi/lunch-menu/');
-    $ = cheerio.load(content);
+    let $ = cheerio.load(content);
 
     let menu = $('.flip-box-heading').filter((i, el) => {
         return $(el).text() === thisDay;
