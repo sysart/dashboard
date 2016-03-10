@@ -13,13 +13,13 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-        <div className={styles.container}>
-            <Header />
-            <Panels />
-            <Footer />
-        </div>
-    );
+      return (
+          <div className={styles.container}>
+              <Header />
+              <Panels />
+              <Footer />
+          </div>
+      );
   }
 }
 

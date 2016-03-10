@@ -1,12 +1,12 @@
-.container {
+:local .container {
     font-size: 32px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.date {
+:local .date {
     font-weight: 100;
 }
 
-.time {
+:local .time {
     font-weight: bold;
 }

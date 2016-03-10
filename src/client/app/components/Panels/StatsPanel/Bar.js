@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import Radium from 'radium';
+
+import styles from './styles.css';
 
 class Bar extends React.Component {
     render() {
@@ -10,9 +11,8 @@ class Bar extends React.Component {
 
         return (
             <div>
-                <div style={[styles.bar, style]}></div>
+                <div className={[styles.bar, style]}></div>
             </div>
-
         );
     }
 }
@@ -23,15 +23,4 @@ Bar.propTypes = {
     max: PropTypes.number.isRequired
 };
 
-const styles = {
-    container: {
-
-    },
-    bar: {
-        background: 'white',
-        height: '20px',
-        marginBottom: '10px'
-    }
-};
-
-export default Radium(Bar);
+export default Bar;

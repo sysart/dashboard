@@ -1,5 +1,6 @@
 import React from 'react';
-import Radium from 'radium';
+
+import styles from './styles.css';
 
 class FoodMenuItem extends React.Component {
     constructor(props) {
@@ -8,36 +9,21 @@ class FoodMenuItem extends React.Component {
 
     render() {
         const components = this.props.set.components.map((component, index) => {
-            return (<div key={index} style={styles.item}>{component}</div>);
+            return (<div key={index} className={styles.item}>{component}</div>);
         });
 
         return (
             <div style={styles.container}>
                 {this.props.set.name && (
-                    <div style={styles.name}>{this.props.set.name}</div>
+                    <div className={styles.name}>{this.props.set.name}</div>
                 )}
                 {components}
                 {this.props.set.price && (
-                    <div style={styles.price}>Hinta: {this.props.set.price}</div>
+                    <div className={styles.price}>Hinta: {this.props.set.price}</div>
                 )}
             </div>
         )
     }
 }
 
-const styles = {
-    container: {
-        marginBottom: '20px'
-    },
-    item: {
-        marginBottom: '5px'
-    },
-    name: {
-        fontWeight: 'bold'
-    },
-    price: {
-        fontWeight: 'bold'
-    }
-};
-
-export default Radium(FoodMenuItem);
+export default FoodMenuItem;

@@ -23,7 +23,7 @@ class Footer extends React.Component {
 
         return (
             <div className={styles.container}>
-                <div className='marquee'>{message}</div>
+                <marquee>{message}</marquee>
             </div>
         );
     }

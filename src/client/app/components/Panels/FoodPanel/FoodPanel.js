@@ -1,10 +1,11 @@
 import React from 'react';
 import reactMixin from 'react-mixin';
-import Radium from 'radium';
 
 import FoodMenuItem from './FoodMenuItem'
 
 import Datas from 'lib/collections/Datas';
+
+import styles from './styles.css';
 
 @reactMixin.decorate(ReactMeteorData)
 class FoodPanel extends React.Component {
@@ -34,9 +35,9 @@ class FoodPanel extends React.Component {
         return (
             <div>
                 <section>
-                    <h1 style={styles.title}>Amica</h1>
+                    <h1 className={styles.title}>Amica</h1>
                     {amicaSets}
-                    <h1 style={styles.title}>Thai</h1>
+                    <h1 className={styles.title}>Thai</h1>
                     {thaiSets}
                 </section>
 
@@ -45,10 +46,4 @@ class FoodPanel extends React.Component {
     }
 }
 
-const styles = {
-    title: {
-        margin: '0'
-    }
-};
-
-export default Radium(FoodPanel);
+export default FoodPanel;

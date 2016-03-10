@@ -10,16 +10,16 @@ body, html {
     box-sizing: border-box;
 }
 
-.container {
+:local .container {
     position: absolute;
     width: 100%;
     height: 100%;
-    backgroundImage: url("https://unsplash.it/1920/1080/?image=993");
-    backgroundSize: cover;
-    fontFamily: "Roboto", sans-serif;
+    background-image: url(https://unsplash.it/1920/1080/?image=993);
+    background-size: cover;
+    font-family: "Roboto", sans-serif;
     display: flex;
-    flexDirection: column;
-    justifyContent: space-between;
+    flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
     color: white;
 }
