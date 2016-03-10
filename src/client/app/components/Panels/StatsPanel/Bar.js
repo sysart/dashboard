@@ -4,13 +4,24 @@ import styles from './styles.css';
 
 class Bar extends React.Component {
     render() {
-        const width = (this.props.value - this.props.min) / (this.props.max - this.props.min) * 100;
+
+
+        console.log('bar props', this);
+
+        const height = (this.props.value - this.props.min) / (this.props.max - this.props.min) * 100;
         const style = {
-            width: `${width}%`
+            height: `${height}%`,
+
         };
 
+        let m = this.props.index * 40 + 'px';
+
         return (
-            <div>
+            <div style={{position: 'absolute',
+                marginLeft: m,
+    top: 0,
+    bottom: 0,
+}}>
                 <div className={styles.bar} style={style}></div>
             </div>
         );

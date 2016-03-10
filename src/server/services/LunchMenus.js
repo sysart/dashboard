@@ -44,7 +44,7 @@ function loadAmica() {
     let {data} = HTTP.get('http://www.amica.fi/modules/json/json/Index?costNumber=3131&language=fi');
 
     let menu = data.MenusForDays.find((menu) => {
-        return moment(menu.Date).isSame(now, 'day');
+        return moment(menu.Date).add(1, 'days').isSame(now, 'day');
     });
 
     let sets = menu.SetMenus.map((setMenu) => {

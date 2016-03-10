@@ -11,11 +11,12 @@ class Panels extends React.Component {
         super(props, context);
 
         this.panels = [
-            {
-                component: FoodPanel
-            },
+
             {
                 component: StatsPanel
+            },
+            {
+                component: FoodPanel
             },
             {
                 component() {
