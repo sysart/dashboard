@@ -5,4 +5,6 @@
 
     bottom: 0;
     position: absolute;
+
+    transition: 1s;
 }
