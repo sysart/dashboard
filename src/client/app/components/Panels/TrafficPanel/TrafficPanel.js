@@ -22,12 +22,16 @@ class TrafficPanel extends React.Component {
     render() {
         if (!this.data.traffic) return (<div></div>);
 
+        const style = this.data.traffic.speedLanteen < 80 ? {
+            color: 'red'
+        } : {};
+
         return (
             <div>
                 <section>
                     <h1 className={styles.title}>Länsiväylän nopeus:</h1>
                     <p>Itään: {this.data.traffic.speedItaan} km/h</p>
-                    <p>Länteen: {this.data.traffic.speedLanteen} km/h</p>
+                    <p style={style}>Länteen: {this.data.traffic.speedLanteen} km/h</p>
                 </section>
 
             </div>
