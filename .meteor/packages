@@ -9,13 +9,11 @@ mobile-experience       # Packages for a great mobile UX
 mongo                   # The database Meteor supports right now
 tracker                 # Meteor's client-side reactive programming library
 
-standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 # ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 webpack:webpack
 webpack:react
-webpack:json
 
 static-html
 
@@ -26,3 +24,5 @@ http
 react-meteor-data
 percolate:synced-cron
 aldeed:collection2
+standard-minifier-css
+standard-minifier-js
